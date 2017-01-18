@@ -19,9 +19,8 @@ def isexist(element):
 #sbWatchCardItemsNum
 def startProgram():
 
-	driver = webdriver.Chrome("C:\\Users\\Matthew\\Downloads\\chromedriver_win32\\chromedriver.exe")
-	#//*[@id="sbHomeCard411638-129"]/header/div[2]
-	#//*[@id="sbHomeCard411577-129"]
+	driver = webdriver.Chrome("Insert the location of the webdriver")
+
 	driver.get("http://www.swagbucks.com/p/login")
 	before_rest = randint(2,5)
 	time.sleep(before_rest)
@@ -37,7 +36,7 @@ def startProgram():
 	time.sleep(3)
 
 	file = open('vid_list.txt','w')
-
+	#list of webpages may not be updated
 	webpagelist = [
 	"http://www.swagbucks.com/watch/playlists/111/editors-pick",
 	"http://www.swagbucks.com/watch/playlists/133/entertainment",

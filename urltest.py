@@ -19,11 +19,10 @@ class VideoGroup:
 #sets up the extentisions and tells the computer where the selenium driver is
 def startProgram ():
 	chrome_options = Options()
-	#chrome_options.add_argument("--mute-audio") add in to mute audio
 	chrome_options.add_argument("--mute-audio")
-	chrome_options.add_extension('C:\\Users\\Matthew\\AppData\\Local\\Google\\Chrome\\User Data\\Default\\Extensions\\ejddjiiombhjiejeclpkoebbepphohen\\1.6.7_0.crx')
-	driver = webdriver.Chrome("C:\\Users\\Matthew\\Downloads\\chromedriver_win32\\chromedriver.exe",chrome_options=chrome_options)
-	#captchaImg
+	#need to install better, faster, browser to get this bot working
+	chrome_options.add_extension('Link to extension')
+	driver = webdriver.Chrome("Insert the location of the webdriver",chrome_options=chrome_options)
 	driver.get("http://www.swagbucks.com/p/login")
 	before_rest = randint(2,5)
 	time.sleep(before_rest)
@@ -38,9 +37,7 @@ def startProgram ():
 	password.send_keys(Keys.RETURN)
 	time.sleep(3)
 	listOfVideos = []
-	#sbPlaylistVideos //this is the id for all of the sb videos
 
-	#with open("choose_videos.txt") as f:
 	with open("vid_list_final.txt") as f:
 	    textfile = f.readlines()
 	f.close()

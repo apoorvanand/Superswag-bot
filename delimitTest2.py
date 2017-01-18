@@ -16,7 +16,6 @@ def startProgram () :
 	for i in textfile:
 		test = VideoGroup(i)
 		listOfVideos.append(test)
-		#print listOfVideos[0].newsplits[0]
 
 	for j in listOfVideos:
 		print j.newsplits[0]
