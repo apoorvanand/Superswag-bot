@@ -22,18 +22,8 @@ def startProgram():
 	driver = webdriver.Chrome("Insert the location of the webdriver")
 
 	driver.get("http://www.swagbucks.com/p/login")
-	before_rest = randint(2,5)
-	time.sleep(before_rest)
-	username = driver.find_element_by_id("sbxJxRegEmail")
-	password = driver.find_element_by_id("sbxJxRegPswd")
-	username.send_keys("Insert Username")
-	middle_rest = randint(2,5)
-	time.sleep(middle_rest)
-	password.send_keys("Insert Password")
-	after_rest = randint(2,5)
-	time.sleep(after_rest)
-	password.send_keys(Keys.RETURN)
-	time.sleep(3)
+
+	time.sleep(15)
 
 	file = open('vid_list.txt','w')
 	#list of webpages may not be updated
@@ -64,20 +54,14 @@ def startProgram():
 		hover = ActionChains(driver).move_to_element(bottom)
 		hover.perform()
 		time.sleep(3)
-		#driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 		
-		#content = driver.find_elements_by_class_name('sbTrayListItemSbContainer')
 		content = driver.find_elements_by_class_name('sbTrayListItemHeaderImgContainerWrapper')
 		title = driver.find_element_by_id('sbShopSortLabel')
-		#sbTrayListItemHeaderImgContainerWrapper
 		el3 = driver.find_elements_by_css_selector(".sbTrayListItemHeader.watchItemHeader")
-		#numOfVideos = el3.find_elements_by_class_name('sbWatchCardItemsNum')
 		slotPos = 0
-		#playlistWasWatched
 
 		for num in el3:
 			if isexist(num) == False:
-				#print num.text
 				numOfVideos = num.find_element_by_class_name('sbWatchCardItemsNum')
 				file.write(''.join(t) + ",")
 				file.write(numOfVideos.text + ",")
